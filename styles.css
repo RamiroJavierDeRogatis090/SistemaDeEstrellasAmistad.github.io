@@ -1,0 +1,157 @@
+/* Fondo general */
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+
+/* Encabezado */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  border-bottom: 3px solid #e50914;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+h1 {
+  margin: 0;
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #e50914,
+    0 0 40px #e50914;
+  animation: neonBlink 2s infinite alternate;
+}
+
+@keyframes neonBlink {
+  0% { color: #fff; text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #e50914, 0 0 40px #e50914; }
+  50% { color: #e50914; text-shadow: 0 0 5px #e50914, 0 0 15px #e50914, 0 0 30px #fff, 0 0 60px #fff; }
+  100% { color: #fff; text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 30px #e50914, 0 0 60px #e50914; }
+}
+
+/* Tabla responsiva */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+th, td {
+  border: 1px solid #e50914;
+  padding: 10px;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+th {
+  background-color: #e50914;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) { background-color: #222; }
+tr:hover { background-color: #333; transition: background-color 0.3s ease; }
+
+/* Estrellas */
+.stars {
+  color: #e50914;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+.stars:hover { transform: scale(1.2); }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #000;
+  border-top: 3px solid #e50914;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Fila seleccionada */
+.seleccionado {
+  background-color: #e50914 !important;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  body { font-size: 14px; padding: 5px; }
+  .logo { width: 80px; margin-bottom: 5px; }
+  h1 { font-size: 18px; line-height: 1.2; }
+  table { font-size: 12px; }
+  th, td { padding: 6px; }
+  footer { font-size: 12px; padding: 5px; }
+}
+
+@media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;   /* scroll horizontal si hace falta */
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 { font-size: 16px; }
+  .logo { width: 60px; }
+  table { font-size: 11px; }
+}
+
+
+
+/* Sección Último Ganador */
+#ultimoGanador {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #000;
+  border: 2px solid #e50914;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center; /* centra título y contenido */
+}
+
+#ultimoGanador h2 {
+  color: #e50914;
+  text-shadow: 0 0 10px #e50914;
+  margin-bottom: 20px;
+}
+
+.ganador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ganador .trofeo {
+  width: 220px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 15px gold);
+}
+
+.ganador p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+}

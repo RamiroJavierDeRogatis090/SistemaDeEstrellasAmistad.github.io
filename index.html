@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Estrellas - La Amistad</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Logo La Amistad" class="logo">
+        <h1>⭐ Sistema de Estrellas - La Amistad ⭐</h1>
+    </header>
+
+
+
+    <main>
+        <table id="tabla"></table>
+    </main>
+
+
+    <!-- Audio oculto -->
+    <audio id="bgMusic">
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <script>
+        async function cargarExcel() {
+            const response = await fetch("SistemaEstrellasAmistad.xlsx");
+            const data = await response.arrayBuffer();
+            const workbook = XLSX.read(data, { type: "array" });
+            const sheet = workbook.Sheets[workbook.SheetNames[0]];
+            const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+            const tabla = document.getElementById("tabla");
+            tabla.innerHTML = "";
+
+            json.forEach((fila, i) => {
+                const row = document.createElement("tr");
+                fila.forEach((celda, j) => {
+                    const cell = document.createElement(i === 0 ? "th" : "td");
+                    cell.textContent = celda;
+                    if (i > 0 && j === 2) cell.className = "stars"; // columna estrellas
+                    row.appendChild(cell);
+                });
+                tabla.appendChild(row);
+            });
+        }
+        cargarExcel();
+    </script>
+    <script src="index.js"></script>
+
+    <section id="Ultima botin de oron">
+  <div class="ganador">
+    <img src="botinoro.png" alt="Botín de Oro" class="trofeo">
+    <p>Ultimo ganador 🏆</p>
+    <p><strong>Botín de Oro:</strong> Agustín Distabile</p>
+  </div>
+</section>
+    <footer>
+        <p>© 2026 Club La Amistad</p>
+    </footer>
+
+
+
+</body>
+
+</html>
