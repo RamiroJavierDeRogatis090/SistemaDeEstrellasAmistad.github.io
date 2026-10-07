@@ -2,9 +2,9 @@
 
 Página web del **Club La Amistad** para visualizar el ranking de estrellas de sus integrantes, cargado automáticamente desde una planilla de Excel, con un diseño elegante en tema oscuro y acentos dorados.
 
-![Captura principal](Capturas/home.png)
+![Captura principal](home.png)
 
-![Captura inferior](Capturas/homeInferior.png)
+![Captura inferior](homeInferior.png)
 
 ## ✨ Características
 
